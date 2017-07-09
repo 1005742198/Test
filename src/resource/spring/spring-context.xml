@@ -34,13 +34,10 @@
  	<!-- MyBatis begin -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="com.huajin"/>
-        <property name="typeAliasesSuperType" value="com.huajin.baymax.db.BaseEntity"/>
         <property name="mapperLocations">
         	<array>
         		<value>classpath:/mybatis/mappings/*.xml</value>
-        		<value>classpath:/mybatis/mappings/*/*.xml</value>
-        		<value>classpath:/commander/mybatis/mappings/*.xml</value>
+        		<!-- <value>classpath:/commander/mybatis/mappings/*.xml</value> -->
         	</array>
         </property>
 		<property name="configLocation" value="classpath:/mybatis/mybatis-config.xml"></property>
