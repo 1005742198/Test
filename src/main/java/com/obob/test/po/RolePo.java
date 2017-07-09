@@ -1,6 +1,7 @@
 package com.obob.test.po;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.util.StringUtils;
 
 /**
  * 
@@ -29,7 +30,7 @@ public class RolePo {
 	/**
 	 * 创建人,member_operator.id
 	 */
-	private Integer createOperatorId;
+	private Integer createOperatorId = 0;
 	/**
 	 * 更新时间
 	 */
@@ -56,7 +57,10 @@ public class RolePo {
 		this.roleDesc = value;
 	}
 	public String getRoleDesc() {
-		return this.roleDesc;
+		if(StringUtils.isEmpty(roleDesc)) {
+			return this.roleName;
+		}
+		return roleDesc;
 	}
 	public void setCreateTime(java.util.Date value) {
 		this.createTime = value;
