@@ -15,9 +15,7 @@ import org.springframework.stereotype.Component;
 
 
 /**
- * RestEasy启动类
  * @author obob
- * 2017年7月9日 下午8:18:36
  */
 @Component
 public class RestApplication extends Application implements ApplicationContextAware {
@@ -42,7 +40,6 @@ public class RestApplication extends Application implements ApplicationContextAw
 			sList += o.getClass().getSimpleName() + ",";
 		}
 		log.info("add Rest Interface:[" + sList + "]");
-		//增加拦截器
 //		classes.add(RestBaseLogInterceptor.class);
 //		classes.add(RestExceptionHandler.class);
 	}

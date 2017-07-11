@@ -27,7 +27,7 @@ public class PersonRoleRelationPo {
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")  
 	private java.util.Date createTime;
 	/**
-	 * 创建人,member_operator.id
+	 * 创建人，member_operator.id
 	 */
 	private Integer createOperatorId;
 	/**
@@ -36,7 +36,7 @@ public class PersonRoleRelationPo {
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")  
 	private java.util.Date updateTime;
 	/**
-	 * 更新人,member_operator.id
+	 * 更新人，member_operator.id
 	 */
 	private Integer updateOperatorId;
 

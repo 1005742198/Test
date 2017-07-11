@@ -15,8 +15,5 @@ public class PersonService {
 	private PersonRoleRelationSupportService relationSupportService;
 	
 	public void initPerson() {
-		//创建一个人
-		//创建角色
-		//关联角色
 	}
 }

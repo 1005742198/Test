@@ -37,7 +37,6 @@
         <property name="mapperLocations">
         	<array>
         		<value>classpath:/mybatis/mappings/*.xml</value>
-        		<!-- <value>classpath:/commander/mybatis/mappings/*.xml</value> -->
         	</array>
         </property>
 		<property name="configLocation" value="classpath:/mybatis/mybatis-config.xml"></property>
@@ -46,8 +45,8 @@
     <!-- 扫描basePackage下所有以@MyBatisDao注解的接口 -->
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-        <property name="basePackage" value="com.huajin"/>
-        <property name="annotationClass" value="com.huajin.baymax.db.annotation.MyBatisDao"/>
+        <property name="basePackage" value="com.obob"/>
+        <property name="annotationClass" value="com.obob.db.MyBatisDao"/>
     </bean>
     
     <!-- 定义事务 -->
@@ -79,23 +78,4 @@
 	    <property name="filters" value="stat" /> 
 	</bean>
 	
-	<bean id="druid-stat-interceptor" class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor"/>
-	<bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut" scope="prototype">
-	    <property name="patterns">
-	        <list>
-	            <value>com.huajin.tradeserver.service.*Service\..*</value>
-	        </list>
-	    </property>
-	</bean>
-	<aop:config>
-	    <aop:advisor advice-ref="druid-stat-interceptor" pointcut-ref="druid-stat-pointcut" />
-	</aop:config>
-	
-<!-- 	<import resource="classpath:spring/spring-rest.xml"/> -->
-	<import resource="classpath:spring/spring-cache.xml"/>
-	<import resource="classpath:spring/spring-service.xml"/>
-	<import resource="classpath:spring/spring-dubbo-provider.xml"/>
-	<import resource="classpath:spring/spring-mq-producer.xml"/>
-	<import resource="classpath:spring/spring-mq-consumer.xml"/>
-	<import resource="classpath:spring/spring-aop.xml"/>
 </beans>

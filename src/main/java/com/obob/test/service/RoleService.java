@@ -28,7 +28,6 @@ public class RoleService {
 		RolePo ancestor = new RolePo();
 		ancestor.setCreateOperatorId(0);
 		ancestor.setRoleName("祖先");
-		ancestor.setRoleDesc("祖先，包括男女");
 		rolePos.add(ancestor);
 		RolePo grandpa = new RolePo();
 		grandpa.setRoleName("爷爷");
