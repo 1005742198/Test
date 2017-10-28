@@ -19,7 +19,7 @@
 	<description>Spring Configuration</description>
 	<!-- 加密的时候会用到它，继承自Spring的配置文件解析父类，做解密处理，否则用context:property-placeholder -->
 	<!-- <bean id="placeholderConfig"
-		class="com.obob.test.support.PropertyPlaceholderConfigExt">
+		class="com.obob.miniprogram.support.PropertyPlaceholderConfigExt">
 		<property name="locations">
 			<list>
 				<value>classpath:config.properties</value>

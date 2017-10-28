@@ -1,4 +1,4 @@
-package com.obob.test.po;
+package com.obob.miniprogram.po;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

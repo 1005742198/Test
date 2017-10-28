@@ -1,4 +1,4 @@
-package com.obob.test.support;
+package com.obob.miniprogram.support;
 
 import java.util.Properties;
 

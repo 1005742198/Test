@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.obob.dao.PersonDao">
+<mapper namespace="com.obob.miniprogram.dao.PersonDao">
 	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO person (
         	Id ,
@@ -48,7 +48,7 @@
         Id = #{id} 
     </delete>
     
-    <select id="getById" parameterType="java.util.Map" resultType="com.obob.test.po.PersonPo">
+    <select id="getById" parameterType="java.util.Map" resultType="com.obob.miniprogram.po.PersonPo">
     	SELECT *
 	    FROM person 
         WHERE 
@@ -99,7 +99,7 @@
 		</where>
 	</sql>
 
-    <select id="select" parameterType="java.util.Map" resultType="com.obob.test.po.PersonPo">
+    <select id="select" parameterType="java.util.Map" resultType="com.obob.miniprogram.po.PersonPo">
     	SELECT *
 	    FROM person 
 		<include refid="where"/>

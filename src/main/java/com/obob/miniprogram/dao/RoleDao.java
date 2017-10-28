@@ -1,10 +1,10 @@
-package com.obob.test.dao;
+package com.obob.miniprogram.dao;
 
 import java.util.List;
 import java.util.Map;
 
 import com.obob.db.MyBatisDao;
-import com.obob.test.po.RolePo;
+import com.obob.miniprogram.po.RolePo;
 
 /**
  * 

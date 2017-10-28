@@ -1,4 +1,4 @@
-package com.obob.test.config;
+package com.obob.miniprogram.config;
 
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;

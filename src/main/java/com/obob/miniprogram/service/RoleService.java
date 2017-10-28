@@ -1,4 +1,4 @@
-package com.obob.test.service;
+package com.obob.miniprogram.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,8 @@ import org.apache.commons.math3.analysis.solvers.RiddersSolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.obob.test.po.RolePo;
-import com.obob.test.service.support.RoleSupportService;
+import com.obob.miniprogram.po.RolePo;
+import com.obob.miniprogram.service.support.RoleSupportService;
 
 @Service
 public class RoleService {

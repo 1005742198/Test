@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.obob.test.dao.PersonRoleRelationDao">
+<mapper namespace="com.obob.miniprogram.dao.PersonRoleRelationDao">
 	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO person_role_relation (
         	Id ,
@@ -41,7 +41,7 @@
         Id = #{id} 
     </delete>
     
-    <select id="getById" parameterType="java.util.Map" resultType="com.obob.test.po.PersonRoleRelationPo">
+    <select id="getById" parameterType="java.util.Map" resultType="com.obob.miniprogram.po.PersonRoleRelationPo">
     	SELECT *
 	    FROM person_role_relation 
         WHERE 
@@ -80,7 +80,7 @@
 		</where>
 	</sql>
 
-    <select id="select" parameterType="java.util.Map" resultType="com.obob.test.po.PersonRoleRelationPo">
+    <select id="select" parameterType="java.util.Map" resultType="com.obob.miniprogram.po.PersonRoleRelationPo">
     	SELECT *
 	    FROM person_role_relation 
 		<include refid="where"/>

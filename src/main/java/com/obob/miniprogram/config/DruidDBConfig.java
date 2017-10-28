@@ -1,4 +1,4 @@
-package com.obob.test.config;
+/*package com.obob.miniprogram.config;
 
 import java.sql.SQLException;
 
@@ -232,3 +232,4 @@ public class DruidDBConfig {
         return manager;  
     }
 }
+*/

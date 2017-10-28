@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.obob.test.dao.RoleDao">
+<mapper namespace="com.obob.miniprogram.dao.RoleDao">
 	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO role (
         	Id ,
@@ -41,7 +41,7 @@
         Id = #{id} 
     </delete>
     
-    <select id="getById" parameterType="java.util.Map" resultType="com.obob.test.po.RolePo">
+    <select id="getById" parameterType="java.util.Map" resultType="com.obob.miniprogram.po.RolePo">
     	SELECT *
 	    FROM role 
         WHERE 
@@ -80,7 +80,7 @@
 		</where>
 	</sql>
 
-    <select id="select" parameterType="java.util.Map" resultType="com.obob.test.po.RolePo">
+    <select id="select" parameterType="java.util.Map" resultType="com.obob.miniprogram.po.RolePo">
     	SELECT *
 	    FROM role 
 		<include refid="where"/>
