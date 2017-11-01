@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.obob.miniprogram.dao.GlobalFileDao">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO global_file (
+        	Id ,
+        	FileGUID ,
+        	ContentType ,
+        	FilePath ,
+        	OriginalFileName ,
+        	DisplayName ,
+        	CreateOperatorId ,
+        	CreateTime ,
+        	UpdateTime ,
+        	UpdateOperatorId 
+        ) VALUES (
+        	#{id} ,
+        	#{fileGuid} ,
+        	#{contentType} ,
+        	#{filePath} ,
+        	#{originalFileName} ,
+        	#{displayName} ,
+        	#{createOperatorId} ,
+        	#{createTime} ,
+        	#{updateTime} ,
+        	#{updateOperatorId} 
+        )
+    	<selectKey resultType="java.lang.Integer" keyProperty="id">
+            select LAST_INSERT_ID() as id
+        </selectKey>
+	</insert>
+    
+	<update id="update">
+        UPDATE global_file SET
+	        FileGUID = #{fileGuid} ,
+	        ContentType = #{contentType} ,
+	        FilePath = #{filePath} ,
+	        OriginalFileName = #{originalFileName} ,
+	        DisplayName = #{displayName} ,
+	        CreateOperatorId = #{createOperatorId} ,
+	        CreateTime = #{createTime} ,
+	        UpdateTime = #{updateTime} ,
+	        UpdateOperatorId = #{updateOperatorId} 
+        WHERE 
+	        Id = #{id} 
+	</update>
+
+    <delete id="delete" parameterType="java.util.Map">
+        DELETE FROM global_file WHERE
+        Id = #{id} 
+    </delete>
+    
+    <select id="getById" parameterType="java.util.Map" resultType="com.obob.po.GlobalFilePo">
+    	SELECT *
+	    FROM global_file 
+        WHERE 
+	        Id = #{id} 
+	</select>
+	
+	<sql id="where">
+		<where>	      				
+	       <if test="@Ognl@isNotEmpty(id)">
+				AND Id = #{id}
+			</if>
+	       <if test="@Ognl@isNotEmpty(fileGuid)">
+				AND FileGUID = #{fileGuid}
+			</if>
+	       <if test="@Ognl@isNotEmpty(contentType)">
+				AND ContentType = #{contentType}
+			</if>
+	       <if test="@Ognl@isNotEmpty(filePath)">
+				AND FilePath = #{filePath}
+			</if>
+	       <if test="@Ognl@isNotEmpty(originalFileName)">
+				AND OriginalFileName = #{originalFileName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(displayName)">
+				AND DisplayName = #{displayName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(createOperatorId)">
+				AND CreateOperatorId = #{createOperatorId}
+			</if>
+	       <if test="@Ognl@isNotEmpty(createTimeBegin)">
+				AND CreateTime >= #{createTimeBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(createTimeEnd)">
+				AND CreateTime &lt;= #{createTimeEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(updateTimeBegin)">
+				AND UpdateTime >= #{updateTimeBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(updateTimeEnd)">
+				AND UpdateTime &lt;= #{updateTimeEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(updateOperatorId)">
+				AND UpdateOperatorId = #{updateOperatorId}
+			</if>
+		</where>
+	</sql>
+
+    <select id="select" parameterType="java.util.Map" resultType="com.obob.po.GlobalFilePo">
+    	SELECT *
+	    FROM global_file 
+		<include refid="where"/>
+		
+		<if test="@Ognl@isNotEmpty(sortColumns)">
+			ORDER BY ${sortColumns}
+		</if>
+    </select>
+</mapper>
+
