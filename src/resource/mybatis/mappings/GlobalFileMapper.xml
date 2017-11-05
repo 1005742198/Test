@@ -21,8 +21,8 @@
         	#{originalFileName} ,
         	#{displayName} ,
         	#{createOperatorId} ,
-        	#{createTime} ,
-        	#{updateTime} ,
+        	now() ,
+        	now() ,
         	#{updateOperatorId} 
         )
     	<selectKey resultType="java.lang.Integer" keyProperty="id">
@@ -38,8 +38,7 @@
 	        OriginalFileName = #{originalFileName} ,
 	        DisplayName = #{displayName} ,
 	        CreateOperatorId = #{createOperatorId} ,
-	        CreateTime = #{createTime} ,
-	        UpdateTime = #{updateTime} ,
+	        UpdateTime = now() ,
 	        UpdateOperatorId = #{updateOperatorId} 
         WHERE 
 	        Id = #{id} 
@@ -50,7 +49,7 @@
         Id = #{id} 
     </delete>
     
-    <select id="getById" parameterType="java.util.Map" resultType="com.obob.po.GlobalFilePo">
+    <select id="getById" parameterType="java.util.Map" resultType="com.obob.miniprogram.po.GlobalFilePo">
     	SELECT *
 	    FROM global_file 
         WHERE 
@@ -98,7 +97,7 @@
 		</where>
 	</sql>
 
-    <select id="select" parameterType="java.util.Map" resultType="com.obob.po.GlobalFilePo">
+    <select id="select" parameterType="java.util.Map" resultType="com.obob.miniprogram.po.GlobalFilePo">
     	SELECT *
 	    FROM global_file 
 		<include refid="where"/>
